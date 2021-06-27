@@ -1,6 +1,7 @@
 # GigSearch
 GigSearch is a reliable marketplace to connect businesses with gig workers to boost income and opportunities.
 <img src="public/logo.png">
+
 Hackathon Submission to DefHacks 2021
 
 # Getting Started with Create React App
