@@ -1,21 +1,50 @@
 import Sawo from "sawo";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import styles from "./styles"
+
 
 function Login() {
-  var config = {
-    // should be same as the id of the container created on 3rd step
-    containerID: "<container-ID>",
-    // can be one of 'email' or 'phone_number_sms'
-    identifierType: "phone_number_sms",
-    // Add the API key copied from 2nd step
-    apiKey: "",
-    // Add a callback here to handle the payload sent by sdk
-    onSuccess: (payload) => {},
+  const [userPayload, setUserPayload] = useState({});
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const config = {
+      containerID: "sawo-container",
+      // can be one of 'email' or 'phone_number_sms'
+      identifierType: "email",
+      apiKey: process.env.REACT_APP_SAWOLABS_API_KEY,
+      onSuccess: onSuccessLogin,
+    };
+    let sawo = new Sawo(config);
+    sawo.showForm();
+  }, []);
+
+  const onSuccessLogin = async (payload) => {
+    setUserPayload(payload);
+    setIsLoggedIn(true);
   };
+
   return (
-    <div className="Login-Container">
-      <div id="sawo-container" style="height: 300px; width: 300px;"></div>
-    </div>
+    <React.Fragment>
+      <div style={styles.containerStyle}>
+        <section>
+          <h1>React | Sawo Form Example</h1>
+          {isLoggedIn && (
+            <React.Fragment>
+              <div style={styles.loggedin}>
+                <h2>User Successfull login</h2>
+                <div>UserId: {userPayload.user_id}</div>
+                <div>Verification Token: {userPayload.verification_token}</div>
+              </div>
+            </React.Fragment>
+          )}
+          {!isLoggedIn && (
+            <div style={styles.formContainer} id="sawo-container">
+            </div>
+          )}
+        </section>
+      </div>
+    </React.Fragment>
   );
 }
 

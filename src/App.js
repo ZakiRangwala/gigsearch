@@ -1,12 +1,13 @@
+import {BrowserRouter as Router,Route} from 'react-router-dom'
+import React from 'react'
+import Login from './Login.js'
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Help Along🧑🏾‍🦽</h1>
-      </header>
-    </div>
+    <Router>
+        <Route path='/' component={Login} exact/>
+    </Router>
   );
 }
 
