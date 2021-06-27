@@ -1,6 +1,7 @@
 import Sawo from "sawo";
 import React, { useEffect, useState } from "react";
 import styles from "./styles"
+import "./Login.css";
 
 
 function Login() {
@@ -26,9 +27,9 @@ function Login() {
 
   return (
     <React.Fragment>
-      <div style={styles.containerStyle}>
+      <div style={styles.containerStyle} className="log-in-container">
         <section>
-          <h1>React | Sawo Form Example</h1>
+          <h1>Sign in</h1>
           {isLoggedIn && (
             <React.Fragment>
               <div style={styles.loggedin}>
