@@ -1,8 +1,8 @@
 # GigSearch
-GigSearch is a reliable marketplace to connect businesses with gig workers to boost income and opportunities.
 <img src="public/logo.png">
+By : Jolee Fu, Zaki Rangwala, Ain Fatima, Omkar Krishnamurthy for DefHacks 2021
 
-Hackathon Submission to DefHacks 2021
+GigSearch is a reliable marketplace to connect businesses with gig workers to boost income and opportunities. 
 
 # Getting Started with Create React App
 
