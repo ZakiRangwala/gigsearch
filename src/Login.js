@@ -12,7 +12,7 @@ function Login() {
     const config = {
       containerID: "sawo-container",
       // can be one of 'email' or 'phone_number_sms'
-      identifierType: "email",
+      identifierType: "phone_number_sms",
       apiKey: process.env.REACT_APP_SAWOLABS_API_KEY,
       onSuccess: onSuccessLogin,
     };
